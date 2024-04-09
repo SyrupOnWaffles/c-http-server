@@ -17,4 +17,4 @@ example
 ```
 ./server 127.0.0.1 42069
 ```
-in order to get the executable to work there has to be at least a 404.html file and preferably an index.html file. both need to be in the same directory as the executable
+in order to get the executable to work there has to be at least a 404.html file and preferably an index.html file as if no path is specified in the url, it defaults to index.html. both need to be in the same directory as the executable
