@@ -9,8 +9,8 @@ gcc -o server main.c http_server.c
 ```
 ## run 
 has two arguments!!!!
-first one is address??!!
-second one is ip???
+first one is ipv4
+second one is port
 
 example
 ```
