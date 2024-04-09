@@ -16,4 +16,4 @@ example
 ```
 ./server 127.0.0.1 42069
 ```
-will default to seeing if index.html in the current directory is available. if not it will redirect to the 404 page titled 404.html. you need a 404 page or else it will seg fault. example files are in examples folder 
+in order to get the executable to work there has to be at least a 404.html file and preferably an index.html file. both need to be in the same directory as the executable
