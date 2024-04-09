@@ -21,4 +21,4 @@ in order to get the executable to work there has to be at least a 404.html file 
 <br><br>
 <b>no compatability with external js/css so everything has to be inline. i told you this was simple<b>
 
-<br><br> now go have fun and make some cool websites!!
+<br>now go have fun and make some cool websites!!
