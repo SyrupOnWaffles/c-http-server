@@ -7,6 +7,7 @@ compile with
 ```
 gcc -o server main.c http_server.c
 ```
+has all standard libs and will compile happily on linux
 ## run 
 has two arguments!!!!<br>
 first one is ipv4<br>
