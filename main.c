@@ -17,14 +17,14 @@ char* ip = "127.0.0.1";
 
 #define max_file_send_size 60000
 
-int visitor_count = 0;
+int visit_count = 0;
 
 void handle_client(int client_fd){
-    visitor_count += 1;
+    visit_count += 1;
 
     char body[max_file_send_size] = {0};
     char footer[256];
-    sprintf(footer,"<center><footer>visitor count: %d</footer></center>\r\n",visitor_count);
+    sprintf(footer,"<center><footer>visit count: %d</footer></center>\r\n",visit_count);
     char recv_buf[256] = {0};
     recv(client_fd, recv_buf, 256, 0);
 
