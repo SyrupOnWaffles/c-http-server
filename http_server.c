@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-char status_200[256]= "HTTP/1.1 200 OK\r\nContent-length: 2048\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n";
+char status_200[256]= "HTTP/1.1 200 OK\r\nContent-length: 4096\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n";
 char status_404[256]= "HTTP/1.1 404 Not Found\r\nContent-length: 2048\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n";
 
 
