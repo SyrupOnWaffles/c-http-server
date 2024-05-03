@@ -29,12 +29,12 @@ void handle_client(int client_fd){
     
     char* f = recv_buf + 5;
     char * token = strtok(f, " ");
-    
+
     if(strcmp(token,"favicon.ico")!=0){
         visit_count += 1;
     }
 
-    parse_html("examples/index.html",&body);
+    parse_html("index.html",&body);
     strcat(body,footer);
     send(client_fd,body,max_file_send_size,0);
 }
