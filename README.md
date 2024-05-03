@@ -17,7 +17,7 @@ example
 ```
 ./server 127.0.0.1 42069
 ```
-in order to get the executable to work there has to be at least a 404.html file and preferably an index.html file as if no path is specified in the url, it defaults to index.html. both need to be in the same directory as the executable
+in order to get the executable to work there has to be an index.html file in the same directory. this version of the server is a lot simpler and the path is ignored meaning no 404. 
 <br><br>
 <b>no compatability with external js/css so everything has to be inline. i told you this was simple<b>
 <br>now go have fun and make some cool websites!!
