@@ -20,48 +20,23 @@ char* ip = "127.0.0.1";
 int visit_count = 0;
 
 void handle_client(int client_fd){
-    visit_count += 1;
 
     char body[max_file_send_size] = {0};
     char footer[256];
     sprintf(footer,"<center><footer>visit count: %d</footer></center>\r\n",visit_count);
     char recv_buf[256] = {0};
     recv(client_fd, recv_buf, 256, 0);
-
+    
     char* f = recv_buf + 5;
     char * token = strtok(f, " ");
     
-    // check if file request is empty and redirect to index.html. only works with get requests and will prolly crash on post request
-    if(recv_buf[5]==32){
-        // check if file exists
-        FILE* file;
-        if((file = fopen("index.html","r"))!=NULL)
-                {
-                    parse_html("index.html",&body,200);
-                    strcat(body,footer);
-                    send(client_fd,body,max_file_send_size,0);
-                }
-            else
-                {
-                    parse_html("404.html",&body,404);
-                    send(client_fd,body,max_file_send_size,0);
-                }
+    if(strcmp(token,"favicon.ico")!=0){
+        visit_count += 1;
     }
-    else{
-        // check if file exists
-        FILE* file;
-        if((file = fopen(token,"r"))!=NULL)
-                {
-                    parse_html(token,&body,200);
-                    strcat(body,footer);
-                    send(client_fd,body,max_file_send_size,0);
-                }
-            else
-                {
-                    parse_html("404.html",&body,404);
-                    send(client_fd,body,max_file_send_size,0);
-                }
-    }
+
+    parse_html("examples/index.html",&body);
+    strcat(body,footer);
+    send(client_fd,body,max_file_send_size,0);
 }
 
 void check(int function,char* error_msg){
@@ -100,9 +75,7 @@ int main(int argc, char const *argv[])
 
     while(1){
         int client_fd = accept(s, 0, 0);
-        pthread_t thread_id; 
-        pthread_create(&thread_id, NULL, handle_client, client_fd); 
-        pthread_join(thread_id,0);
+        handle_client(client_fd);
     }
 
 
